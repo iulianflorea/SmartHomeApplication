@@ -67,6 +67,7 @@ public class SocketRoomIntService {
         int sec= 2;
         long currentTimeMillis = System.currentTimeMillis();
         long scheduledTimeMillis = getScheduleTimeMillis(hour, min, sec, currentTimeMillis);
+        System.out.println("tralalala");
         Calendar cal = Calendar.getInstance();
         cal.set(Calendar.HOUR_OF_DAY, hour);
         cal.set(Calendar.MINUTE, min);
