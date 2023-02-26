@@ -19,6 +19,7 @@ public class LightBulbsRoomInt {
     private Room roomId;
     private Boolean onOff;
     private Integer intensity;
+    private String hourOnOff;
 
     public LightBulbsRoomInt(LightBulb lightBulbId, Room roomId, Boolean onOff, Integer intensity) {
         this.lightBulbId = lightBulbId;
@@ -27,6 +28,14 @@ public class LightBulbsRoomInt {
         this.intensity = intensity;
     }
     public LightBulbsRoomInt(){}
+
+    public String getHourOnOff() {
+        return hourOnOff;
+    }
+
+    public void setHourOnOff(String hourOnOff) {
+        this.hourOnOff = hourOnOff;
+    }
 
     public Integer getId() {
         return id;
