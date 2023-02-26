@@ -24,6 +24,12 @@ public class LightBulbsRoomIntController {
                                                      @PathVariable Boolean onOff) {
         return lightBulbsRoomIntService.setLightBulbValueToRoom(lightBulbId,intensity,onOff);
     }
+    @PostMapping("/timer/light-bulb-id/{lightBulbId}/hour-on/{hourIn}/{minIn}")
+    public void timer(@PathVariable Integer lightBulbId,
+                                   @PathVariable String hourIn,
+                                   @PathVariable String minIn) {
+        lightBulbsRoomIntService.timer(lightBulbId,hourIn,minIn);
+    }
 
 
 }
