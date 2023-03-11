@@ -12,7 +12,7 @@ import java.util.Date;
 public class SocketRoomInt {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id;
+    private Long Id;
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "socket_id")
@@ -52,11 +52,11 @@ public class SocketRoomInt {
         this.onOff = onOff;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return Id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         Id = id;
     }
 

@@ -27,19 +27,19 @@ public class HouseController {
     }
 
     @GetMapping("/find-by-id/{id}")
-    public Optional<House> findById(@PathVariable("id") Integer id) {
+    public Optional<House> findById(@PathVariable("id") Long id) {
         return houseService.findById(id);
     }
 
     @GetMapping("/insert-rooms/{id}/color/{color}/floors/{floors}")
-    public House insertHouse(@PathVariable("id")Integer numberOfHouse,
+    public House insertHouse(@PathVariable("id")Integer numberOfRooms,
                              @PathVariable("color")String color,
                              @PathVariable("floors")Integer floors) {
-       return houseService.insertHouse(numberOfHouse,color,floors);
+       return houseService.insertHouse(numberOfRooms,color,floors);
     }
 
     @DeleteMapping("/delete-id/{id}")
-    public void delete(@PathVariable("id") Integer id) {
+    public void delete(@PathVariable("id") Long id) {
         houseService.delete(id);
     }
 }

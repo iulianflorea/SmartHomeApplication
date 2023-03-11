@@ -23,7 +23,7 @@ public class LightBulbController {
     }
 
     @GetMapping("/find-by-id/{id}")
-    public Optional<LightBulb> findById(@PathVariable("id") Integer id) {
+    public Optional<LightBulb> findById(@PathVariable("id") Long id) {
         return lightBulbService.findById(id);
     }
 
@@ -35,14 +35,14 @@ public class LightBulbController {
         return lightBulbService.insertLightBulb(brand, intensity, power, onOff);
     }
     @PutMapping("/id/{id}/intensity/{intensity}/on-off/{on-off}")
-    public LightBulb setLightBulbValues(@PathVariable("id") Integer id,
+    public LightBulb setLightBulbValues(@PathVariable("id") Long id,
                                         @PathVariable("intensity") Integer intensity,
                                         @PathVariable("on-off") Boolean onOff) {
         return lightBulbService.setLightBulbValues(id, intensity, onOff);
     }
 
     @DeleteMapping("/delete-id/{id}")
-    public void delete(@PathVariable("id") Integer id) {
+    public void delete(@PathVariable("id") Long id) {
         lightBulbService.delete(id);
     }
 }

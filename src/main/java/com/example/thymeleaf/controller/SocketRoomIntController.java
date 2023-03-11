@@ -14,26 +14,26 @@ public class SocketRoomIntController {
     }
 
     @PostMapping("/socket-id/{socketId}/room-id/{roomId}")
-    public SocketRoomInt assignSocketToRoom(@PathVariable Integer socketId,
-                                            @PathVariable Integer roomId) {
+    public SocketRoomInt assignSocketToRoom(@PathVariable Long socketId,
+                                            @PathVariable Long roomId) {
         return socketRoomIntService.assignSocketToRoom(socketId, roomId);
     }
 
     @PutMapping("/socket-id/{socketId}/socket-set/{onOff}")
-    public SocketRoomInt setSocketToRoom(@PathVariable Integer socketId,
+    public SocketRoomInt setSocketToRoom(@PathVariable Long socketId,
                                          @PathVariable Boolean onOff) {
         return socketRoomIntService.setSocketValueToRoom(socketId, onOff);
     }
 
     @PostMapping("/socket-id/{socketId}/hour-on/{hour}/{min}")
-    public SocketRoomInt setSocketHourOn(@PathVariable Integer socketId,
+    public SocketRoomInt setSocketHourOn(@PathVariable Long socketId,
                                          @PathVariable String hour,
                                          @PathVariable String min) throws InterruptedException {
         return socketRoomIntService.setSocketHourOn(socketId,hour, min);
     }
 
     @PostMapping("/timer/socket-id/{socketId}/hour-on/{hourIn}/{minIn}")
-    public void timer(@PathVariable Integer socketId,
+    public void timer(@PathVariable Long socketId,
                       @PathVariable String hourIn,
                       @PathVariable String minIn) {
         socketRoomIntService.timer(socketId,hourIn,minIn);

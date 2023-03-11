@@ -32,11 +32,11 @@ public class RoomService {
         return roomRepository.findAll();
     }
 
-    public Optional<Room> findById(Integer id) {
+    public Optional<Room> findById(Long id) {
         return roomRepository.findById(id);
     }
 
-    public Room insertRoom(Integer numberOfSockets, Integer numberOfLightBulbs,Integer numberOfWindows,Integer houseId) {
+    public Room insertRoom(Integer numberOfSockets, Integer numberOfLightBulbs,Integer numberOfWindows,Long houseId) {
         Room room = new Room();
         room.setNumberOfSockets(numberOfSockets);
         room.setNumberOfLightBulbs(numberOfLightBulbs);
@@ -46,22 +46,13 @@ public class RoomService {
         return saveRoom(room);
     }
 
-//    public Room assignSocketToRoom(Integer roomId, Integer socketId) {
-//        Set<Socket> socketSet = null;
-//        Room room = roomRepository.findById(roomId).get();
-//        Socket socket = socketRepository.findById(socketId).get();
-//        socketSet = room.getSocketsId();
-//        socketSet.add(socket);
-//        room.setSocketsId(socketSet);
-//        return roomRepository.save(room);
-//    }
 
-    public void delete(Integer id) {
+    public void delete(Long id) {
         Room roomToDelete = roomRepository.findById(id).orElseThrow();
         roomRepository.delete(roomToDelete);
     }
 
-    public Room setSocketToRoom(Integer roomId, Integer socketId, Boolean socketValue) {
+    public Room setSocketToRoom(Long roomId, Long socketId, Boolean socketValue) {
         Room roomSelected = roomRepository.findById(roomId).get();
         Socket socket = socketRepository.findById(socketId).get();
         socket.setOnOff(socketValue);

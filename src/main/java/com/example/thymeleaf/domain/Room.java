@@ -11,7 +11,7 @@ import java.util.Set;
 public class  Room {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 @OneToMany(mappedBy = "roomId")
     private Set<SocketRoomInt> socketsId = new HashSet<>();
 @OneToMany(mappedBy = "roomId")
@@ -53,11 +53,11 @@ public class  Room {
         this.socketsId = socketsId;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
