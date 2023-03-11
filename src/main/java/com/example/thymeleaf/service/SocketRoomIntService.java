@@ -41,11 +41,11 @@ public class SocketRoomIntService {
         return socketIntRepository.findAll();
     }
 
-    public Optional<SocketRoomInt> findById(Integer id) {
+    public Optional<SocketRoomInt> findById(Long id) {
         return socketIntRepository.findById(id);
     }
 
-    public SocketRoomInt assignSocketToRoom(Integer socketId, Integer roomId) {
+    public SocketRoomInt assignSocketToRoom(Long socketId, Long roomId) {
         SocketRoomInt socketRoomInt = new SocketRoomInt();
         Socket socket = socketRepository.findById(socketId).orElseThrow();
         Room room = roomRepository.findById(roomId).orElseThrow();
@@ -54,13 +54,13 @@ public class SocketRoomIntService {
         return saveSocketRoomInt(socketRoomInt);
     }
 
-    public SocketRoomInt setSocketValueToRoom(Integer socketId, Boolean onOff) {
+    public SocketRoomInt setSocketValueToRoom(Long socketId, Boolean onOff) {
         SocketRoomInt socketRoomInt = socketIntRepository.findById(socketId).orElseThrow();
         socketRoomInt.setOnOff(onOff);
         return saveSocketRoomInt(socketRoomInt);
     }
 
-    public void timer(Integer socketId, String hourIn, String minIn) {
+    public void timer(Long socketId, String hourIn, String minIn) {
         Timer timer = new Timer(true);
         int hour = Integer.parseInt(hourIn);
         int min = Integer.parseInt(minIn);
@@ -91,7 +91,7 @@ public class SocketRoomIntService {
     }
 
 
-    public SocketRoomInt setSocketHourOn(Integer socketId, String hour, String min) throws InterruptedException {
+    public SocketRoomInt setSocketHourOn(Long socketId, String hour, String min) throws InterruptedException {
         int hourIn = Integer.parseInt(hour);
         int minIn = Integer.parseInt(min);
         SocketRoomInt socketRoomInt = socketIntRepository.findById(socketId).orElseThrow();

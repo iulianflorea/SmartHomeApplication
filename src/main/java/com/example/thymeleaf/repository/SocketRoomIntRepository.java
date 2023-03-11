@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface SocketRoomIntRepository extends JpaRepository<SocketRoomInt,Integer> {
+public interface SocketRoomIntRepository extends JpaRepository<SocketRoomInt,Long> {
 }

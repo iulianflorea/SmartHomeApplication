@@ -25,7 +25,7 @@ public class RoomController {
     }
 
     @GetMapping("/find-by-id/{id}")
-    public Optional<Room> findById(@PathVariable("id") Integer id) {
+    public Optional<Room> findById(@PathVariable("id") Long id) {
         return roomService.findById(id);
     }
 
@@ -33,13 +33,13 @@ public class RoomController {
     public Room insertRoom(@PathVariable("socket") Integer numberOfSockets,
                            @PathVariable("light-bulbs") Integer numberOfLightBulbs,
                            @PathVariable("windows") Integer numberOfWindows,
-                           @PathVariable("house-id") Integer houseId) {
+                           @PathVariable("house-id") Long houseId) {
         return roomService.insertRoom(numberOfSockets, numberOfLightBulbs, numberOfWindows, houseId);
     }
 
 
     @DeleteMapping("/delete-id/{id}")
-    public void delete(@PathVariable("id") Integer id) {
+    public void delete(@PathVariable("id") Long id) {
         roomService.delete(id);
     }
 }

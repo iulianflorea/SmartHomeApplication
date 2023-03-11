@@ -30,7 +30,7 @@ public class SocketService {
         return socketRepository.findAll();
     }
 
-    public Optional<Socket> findById(java.lang.Integer id) {
+    public Optional<Socket> findById(Long id) {
         return socketRepository.findById(id);
     }
 
@@ -43,17 +43,8 @@ public class SocketService {
         return saveSocket(socket);
     }
 
-//    public Socket assignSocketToRoom(Integer socketId, Integer roomId) {
-//        Set<Room> roomSet = null;
-//        Socket socket = socketRepository.findById(socketId).get();
-//        Room room = roomRepository.findById(roomId).get();
-//        roomSet = socket.getAddedRoom();
-//        roomSet.add(room);
-//        socket.setAddedRoom(roomSet);
-//        return saveSocket(socket);
-//    }
 
-    public void delete(Integer id) {
+    public void delete(Long id) {
         Socket socketToDelete = socketRepository.findById(id).orElseThrow();
         socketRepository.delete(socketToDelete);
     }

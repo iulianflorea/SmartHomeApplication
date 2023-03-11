@@ -25,7 +25,7 @@ public class HouseService {
         return houses;
     }
 
-    public Optional<House> findById(Integer id) {
+    public Optional<House> findById(Long id) {
         return houseRepository.findById(id);
     }
 
@@ -37,7 +37,7 @@ public class HouseService {
         return saveHouse(house);
     }
 
-    public void delete(Integer id) {
+    public void delete(Long id) {
         House houseToDelete = houseRepository.findById(id).orElseThrow();
         houseRepository.delete(houseToDelete);
     }

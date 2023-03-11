@@ -25,7 +25,7 @@ public class LightBulbService {
         return lightBulbRepository.findAll();
     }
 
-    public Optional<LightBulb> findById(Integer id) {
+    public Optional<LightBulb> findById(Long id) {
         return lightBulbRepository.findById(id);
     }
 
@@ -38,14 +38,14 @@ public class LightBulbService {
         return saveLightBulb(lightBulb);
     }
 
-    public LightBulb setLightBulbValues(Integer id, Integer intensity, Boolean onOff) {
+    public LightBulb setLightBulbValues(Long id, Integer intensity, Boolean onOff) {
         LightBulb lightBulbSelected = lightBulbRepository.findById(id).orElseThrow();
         lightBulbSelected.setIntensity(intensity);
         lightBulbSelected.setOnOff(onOff);
         return saveLightBulb(lightBulbSelected);
     }
 
-    public void delete(Integer id) {
+    public void delete(Long id) {
         LightBulb lightBulbToDelete = lightBulbRepository.findById(id).orElseThrow();
         lightBulbRepository.delete(lightBulbToDelete);
     }

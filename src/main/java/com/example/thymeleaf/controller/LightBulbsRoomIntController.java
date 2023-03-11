@@ -14,18 +14,18 @@ public class LightBulbsRoomIntController {
         this.lightBulbsRoomIntService = lightBulbsRoomIntService;
     }
     @PostMapping("/light-bulb-id/{lightBulbId}/room-id/{roomId}")
-    public LightBulbsRoomInt assignLightBulbsToRoom(@PathVariable Integer lightBulbId,
-                                                    @PathVariable Integer roomId) {
+    public LightBulbsRoomInt assignLightBulbsToRoom(@PathVariable Long lightBulbId,
+                                                    @PathVariable Long roomId) {
         return lightBulbsRoomIntService.assignLightBulbsToRoom(lightBulbId,roomId);
     }
     @PutMapping("/light-bulb-id/{lightBulbId}/intensity/{intensity}/on-off/{onOff}")
-    public LightBulbsRoomInt setLightBulbValueToRoom(@PathVariable Integer lightBulbId,
+    public LightBulbsRoomInt setLightBulbValueToRoom(@PathVariable Long lightBulbId,
                                                      @PathVariable Integer intensity,
                                                      @PathVariable Boolean onOff) {
         return lightBulbsRoomIntService.setLightBulbValueToRoom(lightBulbId,intensity,onOff);
     }
     @PostMapping("/timer/light-bulb-id/{lightBulbId}/hour-on/{hourIn}/{minIn}")
-    public void timer(@PathVariable Integer lightBulbId,
+    public void timer(@PathVariable Long lightBulbId,
                                    @PathVariable String hourIn,
                                    @PathVariable String minIn) {
         lightBulbsRoomIntService.timer(lightBulbId,hourIn,minIn);

@@ -34,11 +34,11 @@ public class LightBulbsRoomIntService {
         return lightBulbsRoomIntRepository.findAll();
     }
 
-    public Optional<LightBulbsRoomInt> findById(Integer id) {
+    public Optional<LightBulbsRoomInt> findById(Long id) {
         return lightBulbsRoomIntRepository.findById(id);
     }
 
-    public LightBulbsRoomInt assignLightBulbsToRoom(Integer lightBulbId, Integer roomId) {
+    public LightBulbsRoomInt assignLightBulbsToRoom(Long lightBulbId, Long roomId) {
         LightBulbsRoomInt lightBulbsRoomInt = new LightBulbsRoomInt();
         LightBulb lightBulb = lightBulbRepository.findById(lightBulbId).orElseThrow();
         Room room = roomRepository.findById(roomId).orElseThrow();
@@ -47,7 +47,7 @@ public class LightBulbsRoomIntService {
         return saveLightBulbsRoomInt(lightBulbsRoomInt);
     }
 
-    public LightBulbsRoomInt setLightBulbValueToRoom(Integer lightBulbsId, Integer intensity, Boolean onOff) {
+    public LightBulbsRoomInt setLightBulbValueToRoom(Long lightBulbsId, Integer intensity, Boolean onOff) {
         LightBulbsRoomInt lightBulbsRoomInt = lightBulbsRoomIntRepository.findById(lightBulbsId).orElseThrow();
         if (intensity >= 0 && intensity <= 100) {
             lightBulbsRoomInt.setIntensity(intensity);
@@ -58,13 +58,13 @@ public class LightBulbsRoomIntService {
         return saveLightBulbsRoomInt(lightBulbsRoomInt);
     }
 
-    public void timer(Integer lightBulbId, String hourIn, String minIn) {
+    public void timer(Long lightBulbId, String hourIn, String minIn) {
         Timer timer = new Timer(true);
         int hour = Integer.parseInt(hourIn);
         int min = Integer.parseInt(minIn);
         int sec= 2;
         long currentTimeMillis = System.currentTimeMillis();
-        long scheduledTimeMillis = getScheduleTimeMillis(hour, min, sec, currentTimeMillis);
+//        long scheduledTimeMillis = getScheduleTimeMillis(hour, min, sec, currentTimeMillis);
         System.out.println("tralalala");
         Calendar cal = Calendar.getInstance();
         cal.set(Calendar.HOUR_OF_DAY, hour);
@@ -89,7 +89,7 @@ public class LightBulbsRoomIntService {
     }
 
 
-    public LightBulbsRoomInt setLightBulbHourOn(Integer lightBulbId, String hour, String min) throws InterruptedException {
+    public LightBulbsRoomInt setLightBulbHourOn(Long lightBulbId, String hour, String min) throws InterruptedException {
         int hourIn = Integer.parseInt(hour);
         int minIn = Integer.parseInt(min);
         LightBulbsRoomInt lightBulbsRoomInt = lightBulbsRoomIntRepository.findById(lightBulbId).orElseThrow();
@@ -124,7 +124,7 @@ public class LightBulbsRoomIntService {
     }
 
 
-    public void deleteById(Integer id) {
+    public void deleteById(Long id) {
         lightBulbsRoomIntRepository.deleteById(id);
     }
 }

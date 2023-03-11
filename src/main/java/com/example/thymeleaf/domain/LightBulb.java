@@ -11,7 +11,7 @@ import java.util.Set;
 public class LightBulb {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
    @OneToMany(mappedBy = "lightBulbId")
     private Set<LightBulbsRoomInt> addedRoom = new HashSet<>();
     private String brand;
@@ -40,11 +40,11 @@ public class LightBulb {
 
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

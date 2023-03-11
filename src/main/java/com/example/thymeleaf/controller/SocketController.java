@@ -22,7 +22,7 @@ public class SocketController {
     }
 
     @GetMapping("/find-by-id/{id}")
-    public Optional<Socket> findById(@PathVariable("id") Integer id) {
+    public Optional<Socket> findById(@PathVariable("id") Long id) {
         return socketService.findById(id);
     }
 
@@ -42,7 +42,7 @@ public class SocketController {
 //    }
 
     @DeleteMapping("/delete-id/{id}")
-    public void delete(@PathVariable("id") java.lang.Integer id) {
+    public void delete(@PathVariable("id") Long id) {
         socketService.delete(id);
     }
 
