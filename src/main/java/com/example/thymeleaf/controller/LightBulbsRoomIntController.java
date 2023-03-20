@@ -1,7 +1,6 @@
 package com.example.thymeleaf.controller;
 
-import com.example.thymeleaf.domain.LightBulb;
-import com.example.thymeleaf.domain.LightBulbsRoomInt;
+import com.example.thymeleaf.intersection_table.LightBulbsRoomInt;
 import com.example.thymeleaf.service.LightBulbsRoomIntService;
 import org.springframework.web.bind.annotation.*;
 

@@ -2,21 +2,13 @@ package com.example.thymeleaf.service;
 
 import com.example.thymeleaf.domain.Room;
 import com.example.thymeleaf.domain.Socket;
-import com.example.thymeleaf.domain.Socket;
-import com.example.thymeleaf.domain.SocketRoomInt;
+import com.example.thymeleaf.intersection_table.SocketRoomInt;
 import com.example.thymeleaf.repository.RoomRepository;
 import com.example.thymeleaf.repository.SocketRoomIntRepository;
 import com.example.thymeleaf.repository.SocketRepository;
-import org.springframework.data.jpa.convert.threeten.Jsr310JpaConverters;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Service;
 
-import javax.security.sasl.RealmCallback;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 @Service

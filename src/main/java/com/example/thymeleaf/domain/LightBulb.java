@@ -1,6 +1,6 @@
 package com.example.thymeleaf.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.example.thymeleaf.intersection_table.LightBulbsRoomInt;
 import jakarta.persistence.*;
 
 import java.util.HashSet;

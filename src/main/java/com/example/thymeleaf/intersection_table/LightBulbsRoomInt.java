@@ -1,5 +1,7 @@
-package com.example.thymeleaf.domain;
+package com.example.thymeleaf.intersection_table;
 
+import com.example.thymeleaf.domain.LightBulb;
+import com.example.thymeleaf.domain.Room;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
