@@ -1,5 +1,7 @@
 package com.example.thymeleaf.domain;
 
+import com.example.thymeleaf.intersection_table.LightBulbsRoomInt;
+import com.example.thymeleaf.intersection_table.SocketRoomInt;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
@@ -16,6 +18,8 @@ public class  Room {
     private Set<SocketRoomInt> socketsId = new HashSet<>();
 @OneToMany(mappedBy = "roomId")
     private Set<LightBulbsRoomInt> lightBulbsId = new HashSet<>();
+
+
     private Integer numberOfSockets;
     private Integer numberOfLightBulbs;
     private Integer numberOfWindows;

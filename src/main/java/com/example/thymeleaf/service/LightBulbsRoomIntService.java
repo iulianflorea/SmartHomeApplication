@@ -1,9 +1,8 @@
 package com.example.thymeleaf.service;
 
 import com.example.thymeleaf.domain.LightBulb;
-import com.example.thymeleaf.domain.LightBulbsRoomInt;
+import com.example.thymeleaf.intersection_table.LightBulbsRoomInt;
 import com.example.thymeleaf.domain.Room;
-import com.example.thymeleaf.domain.SocketRoomInt;
 import com.example.thymeleaf.repository.LightBulbRepository;
 import com.example.thymeleaf.repository.LightBulbsRoomIntRepository;
 import com.example.thymeleaf.repository.RoomRepository;

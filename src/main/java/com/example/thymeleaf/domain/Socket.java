@@ -1,5 +1,6 @@
 package com.example.thymeleaf.domain;
 
+import com.example.thymeleaf.intersection_table.SocketRoomInt;
 import jakarta.persistence.*;
 
 import java.util.HashSet;
