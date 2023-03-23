@@ -2,6 +2,7 @@ package com.example.thymeleaf.domain;
 
 import com.example.thymeleaf.intersection_table.LightBulbsRoomInt;
 import com.example.thymeleaf.intersection_table.SocketRoomInt;
+import com.example.thymeleaf.intersection_table.WindowBlindRoomInt;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
@@ -10,14 +11,16 @@ import java.util.Set;
 
 @Entity
 @Table(name = "Rooms")
-public class  Room {
+public class Room {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-@OneToMany(mappedBy = "roomId")
+    @OneToMany(mappedBy = "roomId")
     private Set<SocketRoomInt> socketsId = new HashSet<>();
-@OneToMany(mappedBy = "roomId")
+    @OneToMany(mappedBy = "roomId")
     private Set<LightBulbsRoomInt> lightBulbsId = new HashSet<>();
+    @OneToMany(mappedBy = "roomId")
+    private Set<WindowBlindRoomInt> windowBlindsId = new HashSet<>();
 
 
     private Integer numberOfSockets;

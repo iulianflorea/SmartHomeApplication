@@ -27,7 +27,7 @@ public class LightBulbController {
         return lightBulbService.findById(id);
     }
 
-    @GetMapping("/brand/{brand}/intensity/{intensity}/power/{power}/on-off/{true-false}")
+    @PostMapping("/brand/{brand}/intensity/{intensity}/power/{power}/on-off/{true-false}")
     public LightBulb insertLightBulb(@PathVariable("brand") String brand,
                                      @PathVariable("intensity") Integer intensity,
                                      @PathVariable("power") Integer power,

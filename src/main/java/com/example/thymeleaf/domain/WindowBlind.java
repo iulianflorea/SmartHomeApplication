@@ -1,6 +1,11 @@
 package com.example.thymeleaf.domain;
 
+import com.example.thymeleaf.intersection_table.WindowBlindRoomInt;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "window_blind")
@@ -8,6 +13,9 @@ public class WindowBlind {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @OneToMany(mappedBy = "windowBlindId")
+    private Set<WindowBlindRoomInt> addedRoom = new HashSet<>();
     private String brand;
     private Integer opened;
     private String timer;

@@ -31,8 +31,8 @@ public class HouseController {
         return houseService.findById(id);
     }
 
-    @GetMapping("/insert-rooms/{id}/color/{color}/floors/{floors}")
-    public House insertHouse(@PathVariable("id")Integer numberOfRooms,
+    @PostMapping("/insert-rooms/{numberRooms}/color/{color}/floors/{floors}")
+    public House insertHouse(@PathVariable("numberRooms")Integer numberOfRooms,
                              @PathVariable("color")String color,
                              @PathVariable("floors")Integer floors) {
        return houseService.insertHouse(numberOfRooms,color,floors);
