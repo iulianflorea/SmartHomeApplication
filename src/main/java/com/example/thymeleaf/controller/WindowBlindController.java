@@ -1,11 +1,9 @@
 package com.example.thymeleaf.controller;
 
+import com.example.thymeleaf.domain.LightBulb;
 import com.example.thymeleaf.domain.WindowBlind;
 import com.example.thymeleaf.service.WindowBlindService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -18,6 +16,7 @@ public class WindowBlindController {
     public WindowBlindController(WindowBlindService windowBlindService) {
         this.windowBlindService = windowBlindService;
     }
+
     @GetMapping("/windowBlinds")
     public List<WindowBlind> getAll() {
         return windowBlindService.findAll();
@@ -28,5 +27,9 @@ public class WindowBlindController {
         return windowBlindService.findById(id);
     }
 
-
+    @PostMapping("/brand/{brand}/intensity/{intensity}")
+    public WindowBlind insertWindowBlind(@PathVariable("brand") String brand,
+                                         @PathVariable("intensity") Integer intensity) {
+        return windowBlindService.insertWindowBlind(brand, intensity);
+    }
 }

@@ -30,11 +30,10 @@ public class WindowBlindService {
         return windowBlindRepository.findById(id);
     }
 
-    public WindowBlind insertWindowBlind(String brand, Integer opened, String timer) {
+    public WindowBlind insertWindowBlind(String brand, Integer opened) {
         WindowBlind windowBlind = new WindowBlind();
         windowBlind.setBrand(brand);
         windowBlind.setOpened(opened);
-        windowBlind.setTimer(timer);
         return saveWindowBlind(windowBlind);
     }
 

@@ -18,16 +18,23 @@ public class WindowBlind {
     private Set<WindowBlindRoomInt> addedRoom = new HashSet<>();
     private String brand;
     private Integer opened;
-    private String timer;
 
     public WindowBlind() {
     }
 
-    public WindowBlind(Long id, String brand, Integer opened, String timer) {
+    public WindowBlind(Long id, String brand, Integer opened, Set<WindowBlindRoomInt> addedRoom) {
         this.id = id;
         this.brand = brand;
         this.opened = opened;
-        this.timer = timer;
+        this.addedRoom = addedRoom;
+    }
+
+    public Set<WindowBlindRoomInt> getAddedRoom() {
+        return addedRoom;
+    }
+
+    public void setAddedRoom(Set<WindowBlindRoomInt> addedRoom) {
+        this.addedRoom = addedRoom;
     }
 
     public Long getId() {
@@ -54,11 +61,4 @@ public class WindowBlind {
         this.opened = opened;
     }
 
-    public String getTimer() {
-        return timer;
-    }
-
-    public void setTimer(String timer) {
-        this.timer = timer;
-    }
 }
