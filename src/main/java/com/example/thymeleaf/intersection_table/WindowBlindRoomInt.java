@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "window_blind_room_int")
 public class WindowBlindRoomInt {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
