@@ -64,7 +64,6 @@ public class LightBulbsRoomIntService {
         int sec= 2;
         long currentTimeMillis = System.currentTimeMillis();
 //        long scheduledTimeMillis = getScheduleTimeMillis(hour, min, sec, currentTimeMillis);
-        System.out.println("tralalala");
         Calendar cal = Calendar.getInstance();
         cal.set(Calendar.HOUR_OF_DAY, hour);
         cal.set(Calendar.MINUTE, min);
@@ -76,9 +75,7 @@ public class LightBulbsRoomIntService {
             @Override
             public void run() {
                 try {
-                    System.out.println("IN TRY");
                     setLightBulbHourOn(lightBulbId, hourIn, minIn);
-                    System.out.println("A rulat");
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }

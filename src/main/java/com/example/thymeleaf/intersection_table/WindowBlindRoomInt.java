@@ -21,6 +21,8 @@ public class WindowBlindRoomInt {
     private Integer opened;
     private String timer;
 
+    public WindowBlindRoomInt(){}
+
     public WindowBlindRoomInt(WindowBlind windowBlindId, Room roomId, String brand, Integer opened, String timer) {
         this.windowBlindId = windowBlindId;
         this.roomId = roomId;

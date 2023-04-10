@@ -2,10 +2,7 @@ package com.example.thymeleaf.controller;
 
 import com.example.thymeleaf.domain.WindowBlind;
 import com.example.thymeleaf.service.WindowBlindService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -28,5 +25,15 @@ public class WindowBlindController {
         return windowBlindService.findById(id);
     }
 
+    @PostMapping("/insert-window-blind/brand/{brand}/opened/{opened}/timer/{timer}")
+    public WindowBlind insertWindowBlind(@PathVariable String brand,
+                                         @PathVariable Integer opened,
+                                         @PathVariable String timer) {
+        return windowBlindService.insertWindowBlind(brand, opened, timer);
+    }
 
+    @DeleteMapping("/delete-window-blind-byId/{id}")
+    public void deleteById(@PathVariable Long id) {
+        windowBlindService.deleteById(id);
+    }
 }
