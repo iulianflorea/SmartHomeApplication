@@ -34,7 +34,6 @@ public class WindowBlindService {
         WindowBlind windowBlind = new WindowBlind();
         windowBlind.setBrand(brand);
         windowBlind.setOpened(opened);
-        windowBlind.setTimer(timer);
         return saveWindowBlind(windowBlind);
     }
 

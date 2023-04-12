@@ -4,7 +4,9 @@ import com.example.thymeleaf.domain.Room;
 import com.example.thymeleaf.domain.WindowBlind;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+
 @Entity
+@Table(name = "window_blind_room_int")
 public class WindowBlindRoomInt {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,7 +23,9 @@ public class WindowBlindRoomInt {
     private Integer opened;
     private String timer;
 
+
     public WindowBlindRoomInt(){}
+
 
     public WindowBlindRoomInt(WindowBlind windowBlindId, Room roomId, String brand, Integer opened, String timer) {
         this.windowBlindId = windowBlindId;

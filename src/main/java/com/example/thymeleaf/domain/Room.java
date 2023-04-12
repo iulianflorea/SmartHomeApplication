@@ -35,13 +35,22 @@ public class Room {
     public Room() {
     }
 
-    public Room(Integer numberOfSockets, Integer numberOfLightBulbs, Integer numberOfWindows, House house, Set<SocketRoomInt> socketsId, Set<LightBulbsRoomInt> lightBulbsId) {
+    public Room(Integer numberOfSockets, Integer numberOfLightBulbs, Integer numberOfWindows, House house, Set<SocketRoomInt> socketsId, Set<LightBulbsRoomInt> lightBulbsId, Set<WindowBlindRoomInt> windowBlindsId) {
         this.numberOfSockets = numberOfSockets;
         this.numberOfLightBulbs = numberOfLightBulbs;
         this.numberOfWindows = numberOfWindows;
         this.house = house;
         this.socketsId = socketsId;
         this.lightBulbsId = lightBulbsId;
+        this.windowBlindsId = windowBlindsId;
+    }
+
+    public Set<WindowBlindRoomInt> getWindowBlindsId() {
+        return windowBlindsId;
+    }
+
+    public void setWindowBlindsId(Set<WindowBlindRoomInt> windowBlindsId) {
+        this.windowBlindsId = windowBlindsId;
     }
 
     public Set<LightBulbsRoomInt> getLightBulbsId() {
