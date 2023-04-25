@@ -1,7 +1,7 @@
 package com.example.thymeleaf.controller;
 
 import com.example.thymeleaf.intersection_table.SocketRoomInt;
-import com.example.thymeleaf.service.SocketRoomIntService;
+import com.example.thymeleaf.service.impl.SocketRoomIntService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

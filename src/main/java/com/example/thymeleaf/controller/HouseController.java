@@ -2,6 +2,7 @@ package com.example.thymeleaf.controller;
 
 import com.example.thymeleaf.domain.House;
 import com.example.thymeleaf.service.HouseService;
+import com.example.thymeleaf.service.impl.HouseServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

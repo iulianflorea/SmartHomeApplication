@@ -1,8 +1,8 @@
 package com.example.thymeleaf.controller;
 
 import com.example.thymeleaf.domain.LightBulb;
-import com.example.thymeleaf.domain.Socket;
 import com.example.thymeleaf.service.LightBulbService;
+import com.example.thymeleaf.service.impl.LightBulbServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.example.thymeleaf.service;
+package com.example.thymeleaf.service.impl;
 
 import com.example.thymeleaf.domain.LightBulb;
 import com.example.thymeleaf.intersection_table.LightBulbsRoomInt;
@@ -6,37 +6,42 @@ import com.example.thymeleaf.domain.Room;
 import com.example.thymeleaf.repository.LightBulbRepository;
 import com.example.thymeleaf.repository.LightBulbsRoomIntRepository;
 import com.example.thymeleaf.repository.RoomRepository;
+import com.example.thymeleaf.service.LightBulbRoomIntService;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalTime;
 import java.util.*;
 
 @Service
-public class LightBulbsRoomIntService {
+public class LightBulbsRoomIntServiceImpl implements LightBulbRoomIntService {
     private final LightBulbsRoomIntRepository lightBulbsRoomIntRepository;
     private final LightBulbRepository lightBulbRepository;
     private final RoomRepository roomRepository;
 
-    public LightBulbsRoomIntService(LightBulbsRoomIntRepository lightBulbsRoomIntRepository, LightBulbRepository lightBulbRepository, RoomRepository roomRepository) {
+    public LightBulbsRoomIntServiceImpl(LightBulbsRoomIntRepository lightBulbsRoomIntRepository, LightBulbRepository lightBulbRepository, RoomRepository roomRepository) {
         this.lightBulbsRoomIntRepository = lightBulbsRoomIntRepository;
         this.lightBulbRepository = lightBulbRepository;
         this.roomRepository = roomRepository;
     }
 
+    @Override
     public LightBulbsRoomInt saveLightBulbsRoomInt(LightBulbsRoomInt lightBulbsRoomInt) {
         return lightBulbsRoomIntRepository.save(lightBulbsRoomInt);
     }
 
+    @Override
     public List<LightBulbsRoomInt> findAll() {
         List<LightBulbsRoomInt> lightBulbsRoomInts = lightBulbsRoomIntRepository.findAll();
         System.out.println(lightBulbsRoomInts);
         return lightBulbsRoomIntRepository.findAll();
     }
 
+    @Override
     public Optional<LightBulbsRoomInt> findById(Long id) {
         return lightBulbsRoomIntRepository.findById(id);
     }
 
+    @Override
     public LightBulbsRoomInt assignLightBulbsToRoom(Long lightBulbId, Long roomId) {
         LightBulbsRoomInt lightBulbsRoomInt = new LightBulbsRoomInt();
         LightBulb lightBulb = lightBulbRepository.findById(lightBulbId).orElseThrow();
@@ -46,6 +51,7 @@ public class LightBulbsRoomIntService {
         return saveLightBulbsRoomInt(lightBulbsRoomInt);
     }
 
+    @Override
     public LightBulbsRoomInt setLightBulbValueToRoom(Long lightBulbsId, Integer intensity, Boolean onOff) {
         LightBulbsRoomInt lightBulbsRoomInt = lightBulbsRoomIntRepository.findById(lightBulbsId).orElseThrow();
         if (intensity >= 0 && intensity <= 100) {
@@ -57,6 +63,7 @@ public class LightBulbsRoomIntService {
         return saveLightBulbsRoomInt(lightBulbsRoomInt);
     }
 
+    @Override
     public void timer(Long lightBulbId, String hourIn, String minIn) {
         Timer timer = new Timer(true);
         int hour = Integer.parseInt(hourIn);

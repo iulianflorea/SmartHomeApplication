@@ -2,21 +2,19 @@ package com.example.thymeleaf.controller;
 
 import com.example.thymeleaf.domain.Room;
 import com.example.thymeleaf.service.RoomService;
-import com.example.thymeleaf.service.SocketService;
+import com.example.thymeleaf.service.impl.RoomServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
-import javax.security.auth.Subject;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
 @RestController
 @RequestMapping("/room")
 public class RoomController {
     private final RoomService roomService;
 
-    public RoomController(RoomService roomService) {
-        this.roomService = roomService;
+    public RoomController(RoomServiceImpl roomServiceImpl) {
+        this.roomService = roomServiceImpl;
     }
 
     @GetMapping("/rooms")

@@ -1,15 +1,15 @@
 package com.example.thymeleaf.controller;
 
 import com.example.thymeleaf.intersection_table.LightBulbsRoomInt;
-import com.example.thymeleaf.service.LightBulbsRoomIntService;
+import com.example.thymeleaf.service.LightBulbRoomIntService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/light-bulbs-int")
 public class LightBulbsRoomIntController {
-    private final LightBulbsRoomIntService lightBulbsRoomIntService;
+    private final LightBulbRoomIntService lightBulbsRoomIntService;
 
-    public LightBulbsRoomIntController(LightBulbsRoomIntService lightBulbsRoomIntService) {
+    public LightBulbsRoomIntController(LightBulbRoomIntService lightBulbsRoomIntService) {
         this.lightBulbsRoomIntService = lightBulbsRoomIntService;
     }
     @PostMapping("/light-bulb-id/{lightBulbId}/room-id/{roomId}")
