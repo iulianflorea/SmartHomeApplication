@@ -3,13 +3,14 @@ package com.example.thymeleaf.service.impl;
 import com.example.thymeleaf.domain.Socket;
 import com.example.thymeleaf.repository.RoomRepository;
 import com.example.thymeleaf.repository.SocketRepository;
+import com.example.thymeleaf.service.SocketService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public class SocketServiceImpl implements com.example.thymeleaf.service.SocketService {
+public class SocketServiceImpl implements SocketService {
     private final SocketRepository socketRepository;
     private final RoomServiceImpl roomServiceImpl;
     private final RoomRepository roomRepository;

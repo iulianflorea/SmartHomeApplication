@@ -6,18 +6,19 @@ import com.example.thymeleaf.intersection_table.SocketRoomInt;
 import com.example.thymeleaf.repository.RoomRepository;
 import com.example.thymeleaf.repository.SocketRoomIntRepository;
 import com.example.thymeleaf.repository.SocketRepository;
+import com.example.thymeleaf.service.SocketRoomIntService;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalTime;
 import java.util.*;
 
 @Service
-public class SocketRoomIntService implements com.example.thymeleaf.service.SocketRoomIntService {
+public class SocketRoomIntServiceImpl implements SocketRoomIntService {
     private final SocketRoomIntRepository socketIntRepository;
     private final SocketRepository socketRepository;
     private final RoomRepository roomRepository;
 
-    public SocketRoomIntService(SocketRoomIntRepository socketIntRepository, SocketRepository socketRepository, RoomRepository roomRepository) {
+    public SocketRoomIntServiceImpl(SocketRoomIntRepository socketIntRepository, SocketRepository socketRepository, RoomRepository roomRepository) {
         this.socketIntRepository = socketIntRepository;
         this.socketRepository = socketRepository;
         this.roomRepository = roomRepository;

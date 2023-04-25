@@ -1,7 +1,8 @@
 package com.example.thymeleaf.controller;
 
 import com.example.thymeleaf.intersection_table.SocketRoomInt;
-import com.example.thymeleaf.service.impl.SocketRoomIntService;
+import com.example.thymeleaf.service.SocketRoomIntService;
+import com.example.thymeleaf.service.impl.SocketRoomIntServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -23,13 +24,6 @@ public class SocketRoomIntController {
     public SocketRoomInt setSocketToRoom(@PathVariable Long socketId,
                                          @PathVariable Boolean onOff) {
         return socketRoomIntService.setSocketValueToRoom(socketId, onOff);
-    }
-
-    @PostMapping("/socket-id/{socketId}/hour-on/{hour}/{min}")
-    public SocketRoomInt setSocketHourOn(@PathVariable Long socketId,
-                                         @PathVariable String hour,
-                                         @PathVariable String min) throws InterruptedException {
-        return socketRoomIntService.setSocketHourOn(socketId,hour, min);
     }
 
     @PostMapping("/timer/socket-id/{socketId}/hour-on/{hourIn}/{minIn}")

@@ -4,13 +4,14 @@ import com.example.thymeleaf.domain.House;
 import com.example.thymeleaf.domain.Room;
 import com.example.thymeleaf.repository.RoomRepository;
 import com.example.thymeleaf.repository.SocketRepository;
+import com.example.thymeleaf.service.RoomService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
-public class RoomServiceImpl implements com.example.thymeleaf.service.RoomService {
+public class RoomServiceImpl implements RoomService {
     private final RoomRepository roomRepository;
     private final HouseServiceImpl houseService;
     private final SocketRepository socketRepository;
