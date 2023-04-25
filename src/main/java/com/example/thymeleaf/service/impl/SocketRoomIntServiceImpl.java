@@ -66,6 +66,9 @@ public class SocketRoomIntServiceImpl implements SocketRoomIntService {
         int sec= 0;
         long currentTimeMillis = System.currentTimeMillis();
         long scheduledTimeMillis = getScheduleTimeMillis(hour, min, sec, currentTimeMillis);
+        SocketRoomInt socketRoomInt = socketIntRepository.findById(socketId).orElseThrow();
+        socketRoomInt.setHourOnOff(hour + ":" + min);
+        saveSocketRoomInt(socketRoomInt);
         Calendar cal = Calendar.getInstance();
         cal.set(Calendar.HOUR_OF_DAY, hour);
         cal.set(Calendar.MINUTE, min);
@@ -100,7 +103,6 @@ public class SocketRoomIntServiceImpl implements SocketRoomIntService {
         } else {
             socketRoomInt.setOnOff(false);
         }
-        socketRoomInt.setHourOnOff(hour + ":" + min);
         return saveSocketRoomInt(socketRoomInt);
     }
 

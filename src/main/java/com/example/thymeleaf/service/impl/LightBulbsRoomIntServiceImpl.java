@@ -70,7 +70,11 @@ public class LightBulbsRoomIntServiceImpl implements LightBulbRoomIntService {
         int min = Integer.parseInt(minIn);
         int sec= 2;
         long currentTimeMillis = System.currentTimeMillis();
-//        long scheduledTimeMillis = getScheduleTimeMillis(hour, min, sec, currentTimeMillis);
+        long scheduledTimeMillis = getScheduleTimeMillis(hour, min, sec, currentTimeMillis);
+
+        LightBulbsRoomInt lightBulbsRoomInt = lightBulbsRoomIntRepository.findById(lightBulbId).orElseThrow();
+        lightBulbsRoomInt.setHourOnOff(hour + ":" + min);
+        saveLightBulbsRoomInt(lightBulbsRoomInt);
         Calendar cal = Calendar.getInstance();
         cal.set(Calendar.HOUR_OF_DAY, hour);
         cal.set(Calendar.MINUTE, min);

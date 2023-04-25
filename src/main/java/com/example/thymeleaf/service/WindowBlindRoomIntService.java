@@ -1,11 +1,19 @@
 package com.example.thymeleaf.service;
 
+import com.example.thymeleaf.domain.Room;
+import com.example.thymeleaf.domain.WindowBlind;
 import com.example.thymeleaf.intersection_table.WindowBlindRoomInt;
+import com.example.thymeleaf.repository.RoomRepository;
+import com.example.thymeleaf.repository.WindowBlindRepository;
+import com.example.thymeleaf.repository.WindowBlindRoomIntRepository;
+import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Optional;
+import java.time.LocalTime;
+import java.util.*;
 
+@Service
 public interface WindowBlindRoomIntService {
+
 
     WindowBlindRoomInt saveWindowBlindRoomInt(WindowBlindRoomInt windowBlindRoomInt);
 

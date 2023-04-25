@@ -68,6 +68,9 @@ public class WindowBlindRoomIntServiceImpl implements WindowBlindRoomIntService 
         int hour = Integer.parseInt(hourIn);
         int min = Integer.parseInt(minIn);
         int sec= 2;
+        WindowBlindRoomInt windowBlindRoomInt = windowBlindRoomIntRepository.findById(windowBlindId).orElseThrow();
+        windowBlindRoomInt.setTimer(hour + ":" + min);
+        saveWindowBlindRoomInt(windowBlindRoomInt);
         Calendar cal = Calendar.getInstance();
         cal.set(Calendar.HOUR_OF_DAY, hour);
         cal.set(Calendar.MINUTE, min);
@@ -99,7 +102,6 @@ public class WindowBlindRoomIntServiceImpl implements WindowBlindRoomIntService 
         } else {
             System.out.println("Se asteapta ora.");
         }
-        windowBlindRoomInt.setTimer(hour + ":" + min);
         return saveWindowBlindRoomInt(windowBlindRoomInt);
     }
 
