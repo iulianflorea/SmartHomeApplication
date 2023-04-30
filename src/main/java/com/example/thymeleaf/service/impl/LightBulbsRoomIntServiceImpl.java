@@ -68,7 +68,7 @@ public class LightBulbsRoomIntServiceImpl implements LightBulbRoomIntService {
         Timer timer = new Timer(true);
         int hour = Integer.parseInt(hourIn);
         int min = Integer.parseInt(minIn);
-        int sec= 2;
+        int sec= 0;
         long currentTimeMillis = System.currentTimeMillis();
         long scheduledTimeMillis = getScheduleTimeMillis(hour, min, sec, currentTimeMillis);
 

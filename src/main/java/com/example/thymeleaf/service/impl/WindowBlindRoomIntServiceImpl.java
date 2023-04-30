@@ -67,7 +67,7 @@ public class WindowBlindRoomIntServiceImpl implements WindowBlindRoomIntService 
         Timer timer = new Timer(true);
         int hour = Integer.parseInt(hourIn);
         int min = Integer.parseInt(minIn);
-        int sec= 2;
+        int sec= 0;
         WindowBlindRoomInt windowBlindRoomInt = windowBlindRoomIntRepository.findById(windowBlindId).orElseThrow();
         windowBlindRoomInt.setTimer(hour + ":" + min);
         saveWindowBlindRoomInt(windowBlindRoomInt);
